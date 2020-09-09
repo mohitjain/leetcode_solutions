@@ -1,15 +1,15 @@
-# Leet Code Problem: https://leetcode.com/problems/add-two-numbers/
+# Leetcode Problem: https://leetcode.com/problems/add-two-numbers/
 # Definition for singly-linked list.
-# class ListNode
+# class ListListNode
 #     attr_accessor :val, :next
 #     def initialize(val = 0, _next = nil)
 #         @val = val
 #         @next = _next
 #     end
 # end
-# @param {ListNode} l1
-# @param {ListNode} l2
-# @return {ListNode}
+# @param {ListListNode} l1
+# @param {ListListNode} l2
+# @return {ListListNode}
 def add_two_numbers(l1, l2)
   head = nil
   previous_node = nil
@@ -20,7 +20,7 @@ def add_two_numbers(l1, l2)
     sum = first + second + carry
     value = sum % 10
     carry = sum / 10
-    node = ListNode.new(value)
+    node = ListListNode.new(value)
 
     head = node if head.nil?
     if previous_node.nil?
@@ -35,7 +35,7 @@ def add_two_numbers(l1, l2)
   end
 
   if carry > 0
-    node = ListNode.new(carry)
+    node = ListListNode.new(carry)
     previous_node.next = node
   end
 

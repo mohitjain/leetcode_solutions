@@ -1,4 +1,4 @@
-# Leet Code Problem Url: https://leetcode.com/problems/two-sum/
+# Leetcode Problem Url: https://leetcode.com/problems/two-sum/
 
 # @param {Integer[]} nums
 # @param {Integer} target

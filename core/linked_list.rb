@@ -1,8 +1,8 @@
-class Node
-  attr_accessor :value, :next
+class ListNode
+  attr_accessor :val, :next
 
-  def initialize(value)
-    self.value = value
+  def initialize(val = nil)
+    self.val = val
   end
 end
 
@@ -18,8 +18,8 @@ class LinkedList
     end
   end
 
-  def append(value)
-    node = Node.new(value)
+  def append(val)
+    node = ListNode.new(val)
     if head.nil?
       self.head = node
     else
@@ -28,22 +28,22 @@ class LinkedList
     node
   end
 
-  def find(value)
+  def find(val)
     current_node = head
     while(current_node.nil?)
-      return current_node if current_node.value == value
+      return current_node if current_node.val == val
       current_node = current_node.next
     end
   end
 
   def print
     nodes.each do |node|
-      puts node.value
+      puts node.val
     end
   end
 
   def to_s
-    p nodes.collect(&:value).join("->")
+    p nodes.collect(&:val).join("->")
   end
 
    def tail

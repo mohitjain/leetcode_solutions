@@ -1,13 +1,13 @@
 require_relative 'linked_list'
 
-class DoublyNode < Node
+class DoublyListNode < ListNode
   attr_accessor :previous
 end
 
 class DoublyLinkedList < LinkedList
 
-  def append(value)
-    node = DoublyNode.new(value)
+  def append(val)
+    node = DoublyListNode.new(val)
     if head.nil?
       self.head = node
     else
@@ -18,10 +18,10 @@ class DoublyLinkedList < LinkedList
     node
   end
 
-  def remove(value)
+  def remove(val)
     current_node = head
     while(!current_node.nil?)
-      if current_node.value == value
+      if current_node.val == val
         if current_node.previous.nil?
           self.head = current_node.next
         elsif current_node.next.nil?
@@ -41,8 +41,8 @@ class DoublyLinkedList < LinkedList
     return if tail.nil? or tail.previous.nil?
     tail.previous.next = nil
   end
-  def append_at_start(value)
-    node = DoublyNode.new(value)
+  def append_at_start(val)
+    node = DoublyListNode.new(val)
     node.next = head
     self.head.previous = node unless self.head.nil?
     self.head = node
@@ -50,7 +50,7 @@ class DoublyLinkedList < LinkedList
   end
 
   def to_s
-    p nodes.collect(&:value).join("<->")
+    p nodes.collect(&:val).join("<->")
   end
 
 end

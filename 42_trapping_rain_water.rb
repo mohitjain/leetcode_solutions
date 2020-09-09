@@ -1,5 +1,5 @@
 require('pry')
-# LeetCode Problem: https://leetcode.com/problems/trapping-rain-water/
+# Leetcode Problem: https://leetcode.com/problems/trapping-rain-water/
 # @param {Integer[]} height
 # @return {Integer}
 def trap(heights)

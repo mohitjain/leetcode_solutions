@@ -1,5 +1,5 @@
 require('pry')
-# LeetCode Problem: https://leetcode.com/problems/number-of-islands/
+# Leetcode Problem: https://leetcode.com/problems/number-of-islands/
 # @param {Character[][]} grid
 # @return {Integer}
 def num_islands(grid)
