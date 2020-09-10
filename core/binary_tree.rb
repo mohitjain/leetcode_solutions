@@ -34,6 +34,23 @@ class BinaryTree
     end
   end
 
+  def to_s
+    output = []
+    queue = Queue.new [root]
+    while(!queue.empty?)
+      element = queue.dequeue
+      unless element.nil?
+        output.push(element.val)
+        queue.enqueue(element.left)
+        queue.enqueue(element.right)
+      else
+        output.push(nil)
+      end
+
+    end
+    output.reverse.drop_while(&:nil?).reverse
+  end
+
   def inorder(node = root)
     return if node.nil?
     inorder(node.left)

@@ -26,4 +26,8 @@ class Queue
   def to_s
     @data.join("-")
   end
+
+  def data
+    @data
+  end
 end
