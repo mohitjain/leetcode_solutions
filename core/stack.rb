@@ -1,6 +1,6 @@
 class Stack
   def initialize(data = nil)
-    @data = data || nil
+    @data = data || []
   end
 
   def push(element)
