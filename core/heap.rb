@@ -1,4 +1,5 @@
 require 'pry'
+require 'pry-nav'
 class Heap
 
   def initialize(max_size)
@@ -11,6 +12,7 @@ class Heap
     heap[size] = element
     fix_violated_property
     self.size = size + 1
+    drop_last_element_if_overflow
   end
 
   def remove
@@ -18,19 +20,23 @@ class Heap
     heap[0] = nil
     swap(0, size - 1)
     heapify(0)
-    self.size = size - 1
+    self.size = size - 1 if self.size >= 0
     output
   end
-
 
   def to_s
     p heap
   end
 
-
   private
 
   attr_accessor :max_size, :size, :heap
+
+  def drop_last_element_if_overflow
+    return if size <= max_size
+    self.heap[size - 1] = nil
+    self.size = size - 1
+  end
 
   def parent(position)
     position / 2
@@ -63,6 +69,5 @@ class Heap
   def heapify(position)
     raise "Implement this based upon max heap or min heap"
   end
-
 
 end

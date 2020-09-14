@@ -39,23 +39,14 @@ class MaxHeap < Heap
 
 end
 
-heap = MaxHeap.new 5
-heap.insert 5
-heap.insert 7
-heap.to_s
-heap.insert 11
-heap.to_s
-heap.insert 1
+heap = MaxHeap.new 1
+heap.insert 3
 heap.to_s
 heap.insert 2
 heap.to_s
-p heap.remove
+heap.insert 5
 heap.to_s
-p heap.remove
+heap.insert 3
 heap.to_s
-p heap.remove
-heap.to_s
-p heap.remove
-heap.to_s
-p heap.remove
+heap.insert 1
 heap.to_s

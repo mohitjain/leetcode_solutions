@@ -39,7 +39,7 @@ class MinHeap < Heap
 
 end
 
-heap = MinHeap.new 10
+heap = MinHeap.new 1
 heap.insert 5
 heap.insert 7
 heap.to_s
