@@ -1,5 +1,4 @@
 require_relative 'queue'
-require 'pry'
 
 class TreeNode
   attr_accessor :val, :left, :right
@@ -22,7 +21,7 @@ class BinaryTree
     data.each do |item|
       node = TreeNode.new item
       self.root = node if self.root.nil?
-      if !queue.empty?
+      unless queue.empty?
         if queue.front.left.nil?
           queue.front.left = node
         else
@@ -37,7 +36,7 @@ class BinaryTree
   def to_s
     output = []
     queue = Queue.new [root]
-    while(!queue.empty?)
+    until queue.empty?
       element = queue.dequeue
       unless element.nil?
         output.push(element.val)
@@ -53,6 +52,7 @@ class BinaryTree
 
   def inorder(node = root)
     return if node.nil?
+
     inorder(node.left)
     p node.val
     inorder(node.right)
@@ -60,6 +60,7 @@ class BinaryTree
 
   def postorder(node = root)
     return if node.nil?
+
     postorder(node.left)
     postorder(node.right)
     p node.val
@@ -67,6 +68,7 @@ class BinaryTree
 
   def preorder(node = root)
     return if node.nil?
+
     p node.val
     preorder(node.left)
     preorder(node.right)

@@ -35,7 +35,7 @@ def number_to_words(num)
 
   stack = Stack.new
   group = 0
-  while num > 0
+  while num.positive?
     digit3 = num % 10
     num /= 10
     digit2 = num % 10
@@ -43,7 +43,7 @@ def number_to_words(num)
     digit1 = num % 10
     num /= 10
 
-    if digit3 * 100 + digit2 * 10 + digit1 > 0
+    if (digit3 * 100 + digit2 * 10 + digit1).positive?
       stack.push thousands[group]
     end
 
@@ -54,7 +54,7 @@ def number_to_words(num)
       stack.push(tens[digit2])
     end
 
-    if digit1 > 0
+    if digit1.positive?
       stack.push 'Hundred'
       stack.push ones[digit1]
     end

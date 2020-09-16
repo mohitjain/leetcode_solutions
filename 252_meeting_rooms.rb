@@ -16,17 +16,14 @@
 # @param {Integer[][]} intervals
 # @return {Boolean}
 def can_attend_meetings(intervals)
-  intervals = intervals.sort{|x, y| x.first  <=> y.first }
-  
+  intervals = intervals.sort {|x, y| x.first <=> y.first }
+
   intervals.each_with_index do |_, index|
     return true if index == intervals.length - 1
-    if intervals[index][1] > intervals[index + 1][0]
-      return false
-    end
-
+    return false if intervals[index][1] > intervals[index + 1][0]
   end
   true
 end
 
-p can_attend_meetings([[0,30],[5,10],[15,20]])
-p can_attend_meetings [[7,10],[2,4]]
+p can_attend_meetings([[0, 30], [5, 10], [15, 20]])
+p can_attend_meetings [[7, 10], [2, 4]]

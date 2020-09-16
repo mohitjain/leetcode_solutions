@@ -25,12 +25,12 @@ def min_meeting_rooms(intervals)
 
   while start_point < intervals.length
     if start_times[start_point] >= end_times[end_point]
-      used_rooms = used_rooms - 1
-      end_point = end_point + 1
+      used_rooms -= 1
+      end_point += 1
     end
 
-    used_rooms = used_rooms + 1
-    start_point = start_point + 1
+    used_rooms += 1
+    start_point += 1
 
   end
 
@@ -38,5 +38,5 @@ def min_meeting_rooms(intervals)
 
 end
 
-p min_meeting_rooms([[0, 30],[5, 10],[15, 20]])
-p min_meeting_rooms([[7,10],[2,4]])
+p min_meeting_rooms([[0, 30], [5, 10], [15, 20]])
+p min_meeting_rooms([[7, 10], [2, 4]])
