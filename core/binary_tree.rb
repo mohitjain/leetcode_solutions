@@ -20,7 +20,7 @@ class BinaryTree
     queue = Queue.new
     data.each do |item|
       node = TreeNode.new item
-      self.root = node if self.root.nil?
+      self.root = node if root.nil?
       unless queue.empty?
         if queue.front.left.nil?
           queue.front.left = node
@@ -38,12 +38,12 @@ class BinaryTree
     queue = Queue.new [root]
     until queue.empty?
       element = queue.dequeue
-      unless element.nil?
+      if element.nil?
+        output.push(nil)
+      else
         output.push(element.val)
         queue.enqueue(element.left)
         queue.enqueue(element.right)
-      else
-        output.push(nil)
       end
 
     end
