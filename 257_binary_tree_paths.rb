@@ -39,7 +39,7 @@ end
 
 def find_paths(root, path, paths)
   path += root.val.to_s
-  if root.left.nil? && root.right.nil? && !root.val.nil? # this third condition is there because of bug in binary tree implementation, in core/binary_tree. Will fix it 
+  if root.left.nil? && root.right.nil? && !root.val.nil? # this third condition is there because of bug in binary tree implementation, in core/binary_tree. Will fix it
     paths.push path
     return paths
   end
