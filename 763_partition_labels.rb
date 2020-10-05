@@ -34,7 +34,7 @@ def partition_labels(s)
     char = s[index]
     end_index = last_indexes[char]
 
-    j = index + 1
+    j = index
     while j < end_index
       end_index = [end_index, last_indexes[s[j]]].max
       j += 1
