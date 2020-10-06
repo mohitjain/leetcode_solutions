@@ -133,3 +133,5 @@ end
 # max_heap = Heap.new :> do |a, b|
 #   a.counter == b.counter ? (a.word < b.word) : (a.counter > b.counter)
 # end
+#
+# min_heap = Heap.new :<  || Heap.new # Default is also a min heap.
