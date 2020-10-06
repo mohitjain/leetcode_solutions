@@ -128,3 +128,8 @@ class Heap
     i * 2 + 2
   end
 end
+
+#
+# max_heap = Heap.new :> do |a, b|
+#   a.counter == b.counter ? (a.word < b.word) : (a.counter > b.counter)
+# end
