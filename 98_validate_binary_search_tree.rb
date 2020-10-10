@@ -43,9 +43,19 @@
 # @return {Boolean}
 require_relative 'core/binary_tree'
 def is_valid_bst(root)
-  return true if root.nil?
-  return false if !root.left.nil? && root.val < root.left.val
-  return false if !root.right.nil? && root.val > root.right.val
-
-  is_valid_bst(root.left) && is_valid_bst(root.right)
+  validate root, nil, nil
 end
+
+def validate(root, max, min)
+  return true if root.nil? || root.val.nil?
+  return false if !root.val.nil? && !max.nil? && root.val >= max # root.val.nil? check is there because of bug in binary tree implementation
+  return false if !root.val.nil? && !min.nil? && root.val <= min
+
+  validate(root.left, root.val, min) &&  validate(root.right, max, root.val)
+
+end
+
+tree = BinaryTree.new [2, 1, 3]
+p is_valid_bst(tree.root)
+tree = BinaryTree.new [5, 1, 4, nil, nil, 3, 6]
+p is_valid_bst(tree.root)
