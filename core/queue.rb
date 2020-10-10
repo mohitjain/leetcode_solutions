@@ -19,6 +19,10 @@ class Queue
     @data.first
   end
 
+  def size
+    data.length
+  end
+
   def tail
     @data.last
   end
