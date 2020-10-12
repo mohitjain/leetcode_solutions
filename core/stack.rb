@@ -20,10 +20,27 @@ class Stack
   end
 
   def bottom
-    @data.firstx
+    @data.first
+  end
+
+  def size
+    @data.length
+  end
+
+  def to_array
+    @data
   end
 
   def to_s
     @data.join("-")
   end
 end
+
+#
+# stack = Stack.new
+# stack.push 1
+# stack.push 2
+# stack.push 3
+#
+# p stack.pop
+# p stack.pop
