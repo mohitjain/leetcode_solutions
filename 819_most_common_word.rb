@@ -68,7 +68,7 @@ banned = ['hit']
 
 p most_common_word(paragraph, banned)
 
-paragraph =  "a, a, a, a, b,b,b,c, c"
-banned = ["a"]
+paragraph =  'a, a, a, a, b,b,b,c, c'
+banned = ['a']
 
 p most_common_word(paragraph, banned)
