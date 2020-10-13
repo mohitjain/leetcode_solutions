@@ -37,8 +37,7 @@ def is_alien_sorted(words, order)
   order.split('').each_with_index do |item, index|
     order_data[item] = index
   end
-
-  for i in (0..(words.length - 2))
+  (0..(words.length - 2)).to_a.each do |i|
     current_word = words[i]
     next_word = words[i + 1]
     current_word.split('').each_with_index do |current_word_char, index|
