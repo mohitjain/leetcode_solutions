@@ -35,6 +35,7 @@ end
 def is_palindrome(s, start_index, end_index)
   while start_index < end_index
     return false if s[start_index] != s[end_index]
+
     start_index += 1
     end_index -= 1
   end
