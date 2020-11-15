@@ -59,10 +59,12 @@ def equals(s, t)
   return true if s.nil? && t.nil?
   return false if s.nil? || t.nil?
 
-  (x.val == y.val) && equals(s.left, t.left) && equals(s.right, t.right)
+  (s.val == t.val) && equals(s.left, t.left) && equals(s.right, t.right)
   # code here
 end
 
 def traverse(s, t)
-  !s.nil? && (equals(s.left, t) || equals(s.right, t) || equals(s, t))
+  !s.nil? && (
+      equals(s, t) || traverse(s.left, t) || traverse(s.right, t)
+  )
 end
