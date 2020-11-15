@@ -69,9 +69,7 @@ def copyRandomList(head)
 
   new_current = new_head
   until head.nil?
-    unless head.random.nil?
-      new_current.random = data[head.random]
-    end
+    new_current.random = data[head.random] unless head.random.nil?
     head = head.next
     new_current = new_current.next
   end

@@ -24,7 +24,7 @@
 def partition_labels(s)
   parition_lengths = []
   last_indexes = {}
-  s.split("").each_with_index do |char, index|
+  s.split('').each_with_index do |char, index|
     last_indexes[char] = index
   end
 
@@ -47,4 +47,4 @@ def partition_labels(s)
   parition_lengths
 end
 
-p partition_labels("ababcbacadefegdehijhklij")
+p partition_labels('ababcbacadefegdehijhklij')
